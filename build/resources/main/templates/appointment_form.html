@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Book Appointment - VY Dental Care</title>
+    <link rel="stylesheet" th:href="@{/css/book.css}" />
+</head>
+
+<body>
+<div class="container">
+    <img src="assets/logo.jpg" alt="Clinic Logo" class="logo">
+    <h1>Book Appointment</h1>
+
+    <form id="appointmentForm" th:action="@{/submit-appointment}" method="post">
+        <label>Name*</label>
+        <input type="text" name="name" required>
+
+        <label>Age*</label>
+        <input type="number" name="age" required>
+
+        <label>Sex*</label>
+        <select name="sex" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label>Email*</label>
+        <input type="email" name="email" required>
+
+        <label>Mobile Number*</label>
+        <input type="tel" name="mobile" required>
+
+        <label>Address</label>
+        <textarea name="address"></textarea>
+
+        <label>Choose Day*</label>
+        <select id="daySelect" name="day" required>
+            <option value="">Select Day</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+        </select>
+
+        <label>Choose Time Slot*</label>
+        <select id="timeSlotSelect" name="timeSlot" required>
+            <option value="">Select Time Slot</option>
+            <option value="9 AM - 1 PM">9 AM - 1 PM</option>
+            <option value="4 PM - 8 PM">4 PM - 8 PM</option>
+        </select>
+
+        <label>Choose Time*</label>
+        <select id="timeSelect" name="appointmentTime" required>
+            <!-- Filled dynamically by JS -->
+        </select>
+
+        <label>Remark</label>
+        <textarea name="remark"></textarea>
+
+        <button type="submit">Book</button>
+    </form>
+</div>
+
+<script th:src="@{/js/book.js}"></script>
+</body>
+
+</html>
