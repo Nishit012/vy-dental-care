@@ -1,16 +1,12 @@
-/* Font and base styling */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    color: #111;
     background-color: #fdf7f2;
-    scroll-behavior: smooth;
+    color: #111;
 }
 
-/* Header */
 header {
     background-color: #fff;
-    color: #111;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -18,28 +14,27 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 header .logo {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5em;
     font-weight: bold;
-    font-family: 'Playfair Display', serif;
 }
 
-header nav a {
-    color: #111;
+nav a {
     margin: 0 12px;
     text-decoration: none;
+    color: #111;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: 0.3s;
 }
 
-header nav a:hover {
+nav a:hover {
     color: #0074D9;
 }
 
-/* Hero Section */
 .hero {
     background-color: #fffaf3;
     text-align: center;
@@ -49,7 +44,6 @@ header nav a:hover {
 .hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3em;
-    margin-bottom: 10px;
 }
 
 .hero p {
@@ -61,17 +55,16 @@ header nav a:hover {
     background-color: #0074D9;
     color: white;
     padding: 12px 24px;
-    text-decoration: none;
     border-radius: 6px;
+    text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: 0.3s;
 }
 
 .btn:hover {
     background-color: #005fa3;
 }
 
-/* Sections: Services, About, Contact */
 .services, .about, .contact {
     padding: 60px 20px;
     max-width: 1100px;
@@ -79,56 +72,69 @@ header nav a:hover {
     text-align: center;
 }
 
-.services h2, .about h2, .contact h2 {
-    font-size: 2.2em;
-    margin-bottom: 30px;
-    font-family: 'Playfair Display', serif;
+.carousel-container {
+    position: relative;
+    overflow: hidden;
 }
 
-/* Carousel */
-.carousel {
+.contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+
+.contact div {
+                flex: 1;
+                min-width: 300px;
+            }
+
+            
+.carousel-track {
     display: flex;
-    overflow-x: auto;
+    transition: transform 0.5s ease-in-out;
     gap: 20px;
-    padding: 10px 0;
-    scroll-behavior: smooth;
 }
 
-.carousel::-webkit-scrollbar {
-    display: none;
+.service-card {
+    min-width: 300px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex-shrink: 0;
 }
 
-.carousel-item {
-    min-width: 320px;
-    background: #fff;
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.carousel-item img {
+.service-card img {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    margin-right: 16px;
+    margin-bottom: 10px;
     border-radius: 10px;
 }
 
-.service-text h3 {
-    margin: 0 0 5px;
-    font-size: 1.2em;
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
 }
 
-.service-text p {
-    font-size: 0.95em;
-    margin: 0;
+.carousel-btn.prev {
+    left: 0;
 }
 
-/* About */
+.carousel-btn.next {
+    right: 0;
+}
+
 .about-content {
     display: flex;
     flex-wrap: wrap;
@@ -143,51 +149,26 @@ header nav a:hover {
     object-fit: cover;
 }
 
-.about-text h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
 .about-text p {
     max-width: 500px;
+    margin: auto;
     line-height: 1.6;
-    margin: 0 auto;
 }
 
-/* Contact */
-.contact p {
-    margin: 10px 0;
-    font-size: 1em;
-}
-
-/* Footer */
 footer {
     background-color: #eee;
-    color: #111;
-    padding: 20px;
     text-align: center;
+    padding: 20px;
     font-size: 0.9em;
-    margin-top: 40px;
 }
 
-footer a {
-    color: #0074D9;
-    text-decoration: none;
-    margin: 0 5px;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    header nav {
+    nav {
         margin-top: 10px;
     }
 
@@ -195,13 +176,7 @@ footer a:hover {
         flex-direction: column;
     }
 
-    .carousel-item {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .carousel-item img {
-        margin-right: 0;
-        margin-bottom: 10px;
+    .carousel-btn {
+        display: none;
     }
 }

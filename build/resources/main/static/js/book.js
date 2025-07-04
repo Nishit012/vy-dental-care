@@ -23,3 +23,29 @@ document.getElementById('timeSlotSelect').addEventListener('change', function ()
         timeSelect.appendChild(option);
     });
 });
+
+
+// Carousel logic
+document.addEventListener('DOMContentLoaded', function () {
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const cardWidth = 320; // adjust based on actual width + margin
+
+    let currentPosition = 0;
+
+    function moveCarousel(direction) {
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        currentPosition += direction * cardWidth;
+        currentPosition = Math.max(0, Math.min(currentPosition, maxScroll));
+        track.style.transform = `translateX(-${currentPosition}px)`;
+    }
+
+    if (track && prevBtn && nextBtn) {
+        nextBtn.addEventListener('click', () => moveCarousel(1));
+        prevBtn.addEventListener('click', () => moveCarousel(-1));
+
+        // Auto-play every 3 seconds
+        setInterval(() => moveCarousel(1), 3000);
+    }
+});
