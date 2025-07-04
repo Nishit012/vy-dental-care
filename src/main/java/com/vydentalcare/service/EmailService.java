@@ -12,26 +12,6 @@ public class EmailService {
     @Autowired
     private JavaMailSender javaMailSender;
 
-//    public void sendEmail(Appointment appointment) {
-//        //Appointment(id=7, name=NISHIT_GURU, age=25, sex=Male, email=nishitbhandvauri@gmail.com, mobile=6352617207, address=sadas, timeSlot=9 AM - 1 PM, remark=asdsad)
-//        SimpleMailMessage msg = new SimpleMailMessage();
-//        msg.setFrom(appointment.getEmail());
-//        msg.setTo("vydentalcare@gmail.com");
-//        msg.setSubject("New Appointment Booking");
-//
-//        String content = "New appointment booked:\n\n" +
-//                "Name: " + appointment.getName() + "\n" +
-//                "Mobile: " + appointment.getMobile() + "\n" +
-//                "Age: " + appointment.getAge() + "\n" +
-//                "Sex: " + appointment.getSex() + "\n" +
-//                "Address: " + appointment.getAddress() + "\n" +
-//                "Time Slot: " + appointment.getTimeSlot();
-//
-//        msg.setText(content);
-//        javaMailSender.send(msg);
-//    }
-
-
     public void sendEmail(Appointment appointment) {
         SimpleMailMessage msg = new SimpleMailMessage();
         msg.setFrom(appointment.getEmail());
