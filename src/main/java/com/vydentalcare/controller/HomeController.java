@@ -21,7 +21,7 @@ public class HomeController {
 
     @GetMapping("/appointment-success")
     public String appointmentSuccess(Model model) {
-        model.addAttribute("message", "Appointment booked successfully. Email sent!");
+        model.addAttribute("message", "Appointment booked successfully!");
         return "index";
     }
 
