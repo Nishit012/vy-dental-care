@@ -18,4 +18,11 @@ public class HomeController {
         System.out.println("***************   Entering in appoinment Html   ***************");
         return "appointment_form";
     }
+
+    @GetMapping("/appointment-success")
+    public String appointmentSuccess(Model model) {
+        model.addAttribute("message", "Appointment booked successfully. Email sent!");
+        return "index";
+    }
+
 }

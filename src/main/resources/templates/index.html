@@ -66,6 +66,14 @@
     <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
 </footer>
 
-<script th:src="@{/js/script.js}"></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    let message = /*[[${message}]]*/ '';
+    if (message && message !== 'null') {
+        alert(message);
+    }
+    /*]]>*/
+</script>
+
 </body>
 </html>

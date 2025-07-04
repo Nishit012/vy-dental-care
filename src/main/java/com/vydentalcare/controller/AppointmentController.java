@@ -28,6 +28,6 @@ public class AppointmentController {
         emailService.sendEmail(appointment);
         whatsAppService.sendWhatsAppMessage(appointment);
         System.out.println("***************   Entering in success Html   ***************");
-        return "success";
+        return "redirect:/appointment-success";
     }
 }
