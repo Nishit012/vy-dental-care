@@ -97,22 +97,45 @@ nav a:hover {
 }
 
 .service-card {
-    min-width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    min-width: 400px;
+    max-width: 520px;
     background: white;
     border-radius: 10px;
-    padding: 15px;
+    padding: 25px 20px;  /* increased vertical padding */
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    flex-shrink: 0;
+    text-align: left;
+    height: 260px;  /* optional fixed height */
 }
 
 .service-card img {
-    width: 100px;
-    height: 100px;
+    width: 210px;
+    height: 210px;
     object-fit: cover;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    border-radius: 12px;
+    margin: 0;
+    flex-shrink: 0;
 }
 
+.service-card div {
+    flex: 1;
+}
+
+.service-card h3 {
+    margin: 0 0 5px;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.service-card p {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
 .carousel-btn {
     position: absolute;
     top: 50%;
