@@ -185,6 +185,33 @@ footer {
     font-size: 0.9em;
 }
 
+
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    background: #4CAF50; /* green success */
+    color: white;
+    text-align: left;
+    border-radius: 6px;
+    padding: 14px 20px;
+    position: fixed;
+    z-index: 9999;
+    right: 20px;
+    top: 20px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease, top 0.5s ease;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    top: 40px; /* smooth slide down */
+}
+
+
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;

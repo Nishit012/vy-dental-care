@@ -21,7 +21,8 @@ public class WhatsAppService {
 
 
     public void sendWhatsAppMessage(Appointment appointment) {
-        String toWhatsapp = "whatsapp:+91" + appointment.getMobile();
+        String toWhatsapp = "whatsapp:+91" + "6352617207";
+//        String toWhatsapp = "whatsapp:+91" + "6352617207";  //wp number where to send message
 
         StringBuilder messageBody = new StringBuilder();
         messageBody.append("🦷 New Appointment Booked!\n")
@@ -37,7 +38,7 @@ public class WhatsAppService {
                 messageBody.toString()
         ).create();
 
-        System.out.println("✅ WhatsApp Message Sent! SID: " + message.getSid());
+
         System.out.println("✅ WhatsApp Message : " + message.getBody());
     }
 }
