@@ -184,6 +184,28 @@ footer {
     padding: 20px;
     font-size: 0.9em;
 }
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #28a745; /* success green */
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  position: fixed;   /* FIXED for screen position */
+  z-index: 9999;
+  top: 58px;
+  right: 20px;       /* 👈 20px from right */
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 0.8;
+}
+
 
 @media (max-width: 768px) {
     header {

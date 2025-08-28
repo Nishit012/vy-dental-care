@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <header>
     <div class="logo">VY Dental Care</div>
     <nav>
@@ -19,6 +20,7 @@
 </header>
 
 <section class="hero" id="home">
+    <div id="toast" class="toast" th:text="${message}" th:if="${message}"></div>
     <h1>VY Dental Care</h1>
     <p>An Excellent Braces Experience</p>
     <a th:href="@{/appointment}" class="btn">Book Appointment</a>
@@ -161,10 +163,23 @@
         setInterval(() => moveCarousel(1), 3000);
     }
 });
+
+ // Toast function
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add("show");
+
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 4000);
+        }
+
     /*<![CDATA[*/
-    let message = /*[[${message}]]*/ '';
+<!--    let message = /*[[${message}]]*/ '';-->
+    let message = /*[[${message} != null ? '"' + ${message} + '"' : '""']]*/ "";
     if (message && message !== 'null') {
-        alert(message);
+        showToast(message);
     }
     /*]]>*/
 </script>
