@@ -22,9 +22,9 @@ public class HomeController {
 
     @GetMapping("/appointment-success")
     public String appointmentSuccess(Model model,RedirectAttributes redirectAttributes) {
-        model.addAttribute("message", "Appointment booked successfully!");
-        redirectAttributes.addFlashAttribute("message", "Data saved successfully!");
-        return "index";
+//        model.addAttribute("message", "Appointment booked successfully!");
+        redirectAttributes.addFlashAttribute("message", "Appointment booked successfully!");
+        return "redirect:/";
     }
 
 }

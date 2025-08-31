@@ -194,11 +194,12 @@ footer {
   padding: 16px;
   position: fixed;   /* FIXED for screen position */
   z-index: 9999;
-  top: 58px;
+  top: 62px;
   right: 20px;       /* 👈 20px from right */
   font-size: 16px;
   opacity: 0;
   transition: opacity 0.5s, visibility 0.5s;
+  opacity: 0.8;
 }
 
 .toast.show {
