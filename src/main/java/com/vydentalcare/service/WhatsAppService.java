@@ -21,8 +21,8 @@ public class WhatsAppService {
 
 
     public void sendWhatsAppMessage(Appointment appointment) {
-        String toWhatsapp = "whatsapp:+91" + "6352617207";
-//        String toWhatsapp = "whatsapp:+91" + "9023591363";  //wp number where to send message
+//        String toWhatsapp = "whatsapp:+91" + "6352617207";
+        String toWhatsapp = "whatsapp:+91" + "9023591363";  //wp number where to send message
 
         StringBuilder messageBody = new StringBuilder();
         messageBody.append("🦷 New Appointment Booked!\n")

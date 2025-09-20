@@ -14,8 +14,8 @@ public class EmailService {
 
     public void sendEmail(Appointment appointment) {
         SimpleMailMessage msg = new SimpleMailMessage();
-//        msg.setTo("vydentalcare@gmail.com");
-        msg.setTo("nishitgamer0@gmail.com");
+        msg.setTo("vydentalcare@gmail.com");
+//        msg.setTo("nishitgamer0@gmail.com");
         msg.setSubject("New Appointment Booking");
 
         StringBuilder content = new StringBuilder();
