@@ -58,9 +58,7 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      EMAIL_PASSWORD: sltzvmovxczurozr
-      TWILIO_AUTH_TOKEN: 1d3c08cfa380b30f4fe052cca0c62a51
-      TWILIO_AUTH_SID: AC75b06d451feea2bb908c4db9fc2e0189
+     
 
 volumes:
   mysql_data:
